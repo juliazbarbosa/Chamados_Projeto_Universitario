@@ -1,7 +1,7 @@
 package br.com.sistemas.chamados.exception;
 
 import java.time.LocalDateTime;
-import java.until.List;
+import java.util.List;
 
 public record ErroResposta(
     LocalDateTime momento,

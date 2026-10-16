@@ -1,13 +1,13 @@
 package br.com.sistemas.chamados.exception;
 
 import java.time.LocalDateTime;
-import java.until.List;
+import java.util.List;
 
-import org.sprimgframework.http.HttpStatus;
-import org.sprimgframework.http.ResponseEntity;
-import org.sprimgframework.web.bind.MethodArgumentNotValidException;
-import org.sprimgframework.web.bind.annotation.ExceptionHandler;
-import org.sprimgframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler{
