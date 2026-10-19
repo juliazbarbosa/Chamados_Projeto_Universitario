@@ -1,7 +1,5 @@
 package br.com.sistemas.chamados.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,13 +27,6 @@ public class ComentarioService {
         Chamado chamado = buscarChamado(chamadoId);
         Comentario salvo = repository.save(new Comentario(dto.texto(), dto.autor(), chamado));
         return ComentarioResponse.de(salvo);
-    }
-
-    @Transactional(readOnly = true)
-    public List<ComentarioResponse> listarPorChamado(Long chamadoId) {
-        buscarChamado(chamadoId); // garante 404 se o chamado não existir
-        return repository.findByChamadoIdOrderByDataAsc(chamadoId)
-            .stream().map(ComentarioResponse::de).toList();
     }
 
     private Chamado buscarChamado(Long id) {

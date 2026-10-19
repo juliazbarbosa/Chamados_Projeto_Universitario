@@ -1,10 +1,8 @@
 package br.com.sistemas.chamados.controller;
 
 import java.net.URI;
-import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,10 +31,5 @@ public class ComentarioController {
         return ResponseEntity
             .created(URI.create("/chamados/" + chamadoId + "/comentarios/" + criado.id()))
             .body(criado);
-    }
-
-    @GetMapping
-    public List<ComentarioResponse> listar(@PathVariable Long chamadoId) {
-        return service.listarPorChamado(chamadoId);
     }
 }

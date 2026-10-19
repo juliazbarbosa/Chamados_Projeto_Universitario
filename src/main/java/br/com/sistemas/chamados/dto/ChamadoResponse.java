@@ -1,6 +1,7 @@
 package br.com.sistemas.chamados.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import br.com.sistemas.chamados.entity.Chamado;
 import br.com.sistemas.chamados.entity.Prioridade;
@@ -19,7 +20,8 @@ public record ChamadoResponse(
     Long categoriaId,
     String categoriaNome,
     Long tecnicoId,
-    String tecnicoNome
+    String tecnicoNome,
+    List<ComentarioResponse> comentarios
 ) {
     public static ChamadoResponse de(Chamado c) {
         return new ChamadoResponse(
@@ -35,7 +37,8 @@ public record ChamadoResponse(
             c.getCategoria().getId(),
             c.getCategoria().getNome(),
             c.getTecnico() != null ? c.getTecnico().getId() : null,
-            c.getTecnico() != null ? c.getTecnico().getNome() : null
+            c.getTecnico() != null ? c.getTecnico().getNome() : null,
+            c.getComentarios().stream().map(ComentarioResponse::de).toList()
         );
     }
 }
