@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.sistemas.chamados.dto.CategoriaRequest;
 import br.com.sistemas.chamados.dto.CategoriaResponse;
 import br.com.sistemas.chamados.entity.Categoria;
-import br.com.sistemas.chamados.exception.RecursoEncontradoException;
+import br.com.sistemas.chamados.exception.RecursoNaoEncontradoException;
 import br.com.sistemas.chamados.exception.RegraNegocioException;
 import br.com.sistemas.chamados.repository.CategoriaRepository;
 
@@ -58,6 +58,6 @@ public class CategoriaService {
 
     private Categoria buscarEntity(Long id) {
         return repository.findById(id)
-            .orElseThrow(() -> new RecursoEncontradoException("Categoria " + id + " não encontrada"));
+            .orElseThrow(() -> new RecursoNaoEncontradoException("Categoria " + id + " não encontrada"));
     }
 }
