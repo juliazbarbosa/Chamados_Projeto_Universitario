@@ -26,7 +26,7 @@ public class Cliente {
 
     public Cliente() {}
 
-    public Cliente(String nome, String email, String telefone) {
+    public Cliente(String nome, String email, String telefone) {/**dados solicitados para o cadastro de cliente */
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
