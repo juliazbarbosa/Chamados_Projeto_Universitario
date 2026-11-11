@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Sistema de chamados: cadastro de clientes, categorias, técnicos e acompanhamento de chamados." />
+    <title>Central de Chamados</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='10' fill='%23FF6B35' stroke='%2314213D' stroke-width='3'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- Menu lateral: os links são desenhados por js/app.js -->
+      <aside class="sb">
+        <a class="logo" href="#/">
+          <svg width="42" height="42" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="10" fill="#FF6B35" stroke="#14213D" stroke-width="2.5"/><path d="M10 14h20v4.5a2.5 2.5 0 000 5V28H10v-4.5a2.5 2.5 0 000-5z" fill="#FFD23F" stroke="#14213D" stroke-width="2.2"/><path d="M16.5 21l2.7 2.7L24 18" fill="none" stroke="#14213D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <b>Central de<br />Chamados</b>
+        </a>
+        <nav id="nav" aria-label="Menu principal"></nav>
+      </aside>
+
+      <!-- Conteúdo: cada tela é desenhada aqui por js/pages/* -->
+      <main id="main">
+        <noscript><p class="emp">Ative o JavaScript para usar o sistema.</p></noscript>
+      </main>
+    </div>
+
+    <!-- Formulários (novo/editar) e avisos -->
+    <dialog id="dlg"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Ordem importa: cada arquivo usa o que os anteriores definem -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/pages/painel.js"></script>
+    <script src="js/pages/chamados.js"></script>
+    <script src="js/pages/cadastros.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

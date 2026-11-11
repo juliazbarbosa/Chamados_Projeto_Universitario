@@ -1,0 +1,379 @@
+/* Estilos da Central de Chamados. Cores e medidas ficam em :root. */
+:root {
+  --ink: #14213d;
+  --bg: #eef0e8;
+  --acc: #ff6b35;
+  --yel: #ffd23f;
+  --mint: #8fe3b8;
+  --sky: #a9d0ff;
+  --pink: #ffb8cc;
+  --mut: #4f5a73;
+  --sh: 4px 4px 0 var(--ink);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    15px/1.45 Figtree,
+    system-ui,
+    sans-serif;
+}
+h1,
+h2,
+.logo b,
+.stat b {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  margin: 0;
+}
+h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.app {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  min-height: 100vh;
+}
+.sb {
+  width: 240px;
+  flex: none;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  box-shadow: var(--sh);
+  padding: 20px 14px;
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
+}
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 0 6px 18px;
+}
+.logo b {
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+nav a {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  min-height: 44px;
+}
+nav a:hover {
+  background: var(--bg);
+}
+nav a.on {
+  background: var(--yel);
+  border-color: var(--ink);
+}
+main {
+  flex: 1;
+  min-width: 0;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+.card {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 18px;
+}
+.btn {
+  font: inherit;
+  font-weight: 700;
+  background: var(--acc);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 8px 16px;
+  min-height: 44px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+}
+.btn:hover:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.btn.s {
+  background: #fff;
+}
+.btn.d {
+  background: var(--pink);
+}
+.btn.m {
+  min-height: 36px;
+  padding: 4px 10px;
+  box-shadow: none;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin-bottom: 20px;
+}
+.stat {
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: var(--sh);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat b {
+  font-size: 40px;
+  line-height: 1;
+}
+.tw {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+th {
+  text-align: left;
+  font-size: 13px;
+  color: var(--mut);
+  padding: 10px;
+  border-bottom: 2px solid var(--ink);
+}
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #dde1d6;
+  vertical-align: middle;
+}
+tbody tr:hover td {
+  background: #faf8ee;
+}
+td a {
+  color: var(--ink);
+  font-weight: 700;
+}
+.b {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 99px;
+  border: 2px solid var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  background: #fff;
+  white-space: nowrap;
+}
+[data-v="ABERTO"] {
+  background: var(--sky);
+}
+[data-v="EM_ATENDIMENTO"] {
+  background: var(--yel);
+}
+[data-v="AGUARDANDO_CLIENTE"] {
+  background: var(--pink);
+}
+[data-v="FECHADO"] {
+  background: #d9dbe0;
+}
+[data-v="BAIXA"] {
+  background: var(--mint);
+}
+[data-v="MEDIA"] {
+  background: var(--yel);
+}
+[data-v="ALTA"] {
+  background: #ffa977;
+}
+[data-v="CRITICA"] {
+  background: #c1121f;
+  color: #fff;
+}
+[data-v="ADMIN"] {
+  background: var(--pink);
+}
+[data-v="TECNICO"] {
+  background: var(--sky);
+}
+input,
+select,
+textarea {
+  font: inherit;
+  color: var(--ink);
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: #fff;
+  min-height: 44px;
+}
+:focus-visible {
+  outline: 3px solid var(--acc);
+  outline-offset: 2px;
+}
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  margin: 12px 0 5px;
+}
+.fl {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.fl > * {
+  flex: 1;
+  min-width: 160px;
+}
+dialog {
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: var(--sh);
+  padding: 22px;
+  width: min(520px, 94vw);
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: #14213d99;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.two {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  align-items: start;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.kv {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px dashed #c3c8ba;
+}
+.kv span:first-child {
+  color: var(--mut);
+}
+.cm {
+  border-top: 1px solid #dde1d6;
+  padding: 12px 0;
+}
+.cm small {
+  color: var(--mut);
+}
+.bar {
+  height: 14px;
+  border: 2px solid var(--ink);
+  border-radius: 9px;
+  background: #fff;
+  overflow: hidden;
+  margin: 4px 0 12px;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--acc);
+}
+.pg {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+.ac {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 9;
+}
+.t {
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 380px;
+}
+.t.e {
+  background: #c1121f;
+}
+.emp {
+  text-align: center;
+  color: var(--mut);
+  padding: 30px;
+}
+@media (max-width: 860px) {
+  .app {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .sb {
+    width: auto;
+    position: static;
+    height: auto;
+  }
+  nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .two {
+    grid-template-columns: 1fr;
+  }
+}
